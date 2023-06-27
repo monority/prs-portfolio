@@ -12,6 +12,7 @@ function Home() {
             <div className="wrapper">
               <h1>Welcome to my Website</h1>
               <h2>developer <strong>○</strong> creative</h2>
+              <p className='btn btn-redirect'>Answer me anything</p>
             </div>
           </div>
         </div>
@@ -22,11 +23,13 @@ function Home() {
 
             <div className="wrapper">
               <BoxContent
-                title="dev-app-avis"
+                title="Calling Card project"
                 arial_image="image exam project front"
-                image="firstproject.png"
+                image="leaf.png"
                 content="Project created in 1 day. Goal was to set up an app compatible with tablet and most mobile phones where you can register calling cards for a company"
                 typeIcon="BiLogoRedux"
+                isShow="true"
+                typeIconSecond="BiLogoReact"
               />
               <BoxContent
                 title="dev-app-strappi"

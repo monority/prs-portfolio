@@ -13,7 +13,8 @@ const Header = () => {
                         </div>
                         <div class="wrapper">
                             <ul>
-                                <li class="active"><a href="#work">Work</a></li>
+                                <li class="active"><a href="#work">Home</a></li>
+                                <li><a href="#work">Work</a></li>
                                 <li><a href="#Personnal">Personnal</a></li>
                             </ul>
                             <ul>
