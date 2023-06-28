@@ -1,34 +1,59 @@
-import React from 'react'
-import MenuDropdown from './MenuDropdown'
+import React, { useState } from 'react';
+import MenuDropdown from './MenuDropdown';
 
 const Header = () => {
+    const [activeLink, setActiveLink] = useState(0);
+
+    const handleLinkClick = (index) => {
+        setActiveLink(index);
+    };
+
     return (
         <div className='Header'>
             <nav>
-                <div className="container">
-                    <div className="wrappers">
-                        <div className="wrapper">
-                            <a href="/"><img src={`${process.env.PUBLIC_URL}/logo.png`} alt="" /></a>
+                <div className='container'>
+                    <div className='wrappers'>
+                        <div className='wrapper'>
+                            <a href='/'>
+                                <img src={`${process.env.PUBLIC_URL}/logo.png`} alt='' />
+                            </a>
                             <h3>ronan</h3>
                         </div>
-                        <div class="wrapper">
+                        <div className='wrapper'>
                             <ul>
-                                <li class="active"><a href="#work">Home</a></li>
-                                <li><a href="#work">Work</a></li>
-                                <li><a href="#Personnal">Personnal</a></li>
+                                <li className={activeLink === 0 ? 'active' : ''} onClick={() => handleLinkClick(0)}>
+                                    <p>Home</p>
+                                </li>
+                                <li className={activeLink === 1 ? 'active' : ''} onClick={() => handleLinkClick(1)}>
+                                    <p>Work</p>
+                                </li>
+                                <li className={activeLink === 2 ? 'active' : ''} onClick={() => handleLinkClick(2)}>
+                                    <p>Personal</p>
+                                </li>
                             </ul>
                             <ul>
-                                <li><a href="#Personnal"><i class="fa-brands fa-github"></i></a></li>
-                                <li><a href="#Personnal"><i class="fa-brands fa-linkedin"></i></a></li>
-                                <li><a href="#Personnal"><MenuDropdown/></a></li>
-
+                                <li>
+                                    <p>
+                                        <i className='fa-brands fa-github'></i>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <i className='fa-brands fa-linkedin'></i>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <MenuDropdown />
+                                    </p>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </nav>
         </div>
-    )
-}
+    );
+};
 
-export default Header
+export default Header;

@@ -57,6 +57,7 @@ a {
 
             img {
                 width: 4rem;
+                cursor: pointer;
             }
 
             h3 {
@@ -73,14 +74,18 @@ a {
 
             li {
                 font-size: v.$fontSizeLarge;
-
+                font-family: 'Akatab', sans-serif;
+                transition: all .5s ease-in-out;
+                p{
+                    cursor: pointer;
+                }
             }
 
             li.active {
-                a {
-                    color: rgb(53, 167, 133);
+           
+                    color: rgb(43, 162, 127);
 
-                }
+               
             }
         }
     }
