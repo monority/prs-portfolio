@@ -14,9 +14,10 @@ const BoxContent = ({ keys, title, action, content, image, arial_image, typeIcon
                     <IconCustom isShow="true" size="3rem" type={typeIcon} className="icon-content" />
                     {isShow ? <IconCustom size="3rem" type={typeIconSecond} className="icon-content" /> : null}
                     <p onClick={action} className='btn btn-redirect'>Check this project</p>
-                </div></div>
+                </div>
+            </div>
         </div>
     )
 }
 
-export default BoxContent
+export default BoxContent;

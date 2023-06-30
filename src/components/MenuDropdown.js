@@ -1,28 +1,28 @@
-import { DownOutlined, SmileOutlined } from '@ant-design/icons';
+import { DownOutlined } from '@ant-design/icons';
 import { Dropdown, Space } from 'antd';
 const items = [
   {
     key: '1',
     label: (
-      <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
+      <p>
         Light mode
-      </a>
+      </p>
     ),
   },
   {
     key: '2',
     label: (
-      <a target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
+      <p>
         Dark mode
-      </a>
+      </p>
     ),
   },
   {
     key: '3',
     label: (
-      <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
+      <p>
         Switch to French
-      </a>
+      </p>
     ),
   },
 
@@ -33,12 +33,12 @@ const MenuDropdown = () => (
       items,
     }}
   >
-    <a onClick={(e) => e.preventDefault()}>
+    <p onClick={(e) => e.preventDefault()}>
       <Space>
         
         <DownOutlined />
       </Space>
-    </a>
+    </p>
   </Dropdown>
 );
 export default MenuDropdown;

@@ -1,6 +1,6 @@
 @use "reset";
 @use "variables" as v;
-@use "mixin" as m;
+@import "mixin";
 
 // Globales
 
@@ -10,6 +10,10 @@ li {
 
 a {
     text-decoration: none;
+}
+h1 {
+    font-size: v.$fontSizeTitleSmall;
+    margin: 0;
 }
 
 .container {
@@ -44,7 +48,6 @@ a {
     width: 100%;
     backdrop-filter: blur(2px);
 
-
     .wrappers {
         justify-content: space-between;
         display: flex;
@@ -76,16 +79,17 @@ a {
                 font-size: v.$fontSizeLarge;
                 font-family: 'Akatab', sans-serif;
                 transition: all .5s ease-in-out;
-                p{
+
+                p {
                     cursor: pointer;
                 }
             }
 
             li.active {
-           
-                    color: rgb(43, 162, 127);
 
-               
+                color: rgb(43, 162, 127);
+
+
             }
         }
     }
@@ -93,11 +97,8 @@ a {
 }
 
 #landing-page {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 100vh;
+    @include center();
+    min-height: 100vh;
 
     .wrapper {
         display: flex;
@@ -107,11 +108,49 @@ a {
     }
 }
 
-#content-page {
-    h1 {
-        font-size: v.$fontSizeTitleSmall;
-        margin: 0;
+
+#focus-page {
+    @include center();
+    min-height: 100vh;
+
+    .wrappers {
+        display: flex;
+        flex-direction: column;
     }
+
+    .wrapper-focus {
+        background-color: v.$backgroundGlobal;
+        box-shadow: v.$boxShadow;
+        border: v.$borderClassic;
+        padding: 2rem;
+        border-radius: 1rem;
+        width: 40rem;
+        margin: 2rem;
+        display: flex;
+        p{
+            font-size: v.$fontSizedefault;
+            color: v.$colorGreyfaded;
+        }
+    }
+    .wrapper-regroup{
+        display: flex;
+    }
+    .wrapper-image{
+        flex-basis: 25%;
+    }
+
+    img {
+        width: 10rem;
+    }
+
+}
+
+
+#content-page {
+
+    min-height: 100vh;
+
+   
 
     .wrapper {
         max-width: 60rem;
@@ -124,16 +163,14 @@ a {
         background-color: rgb(233, 237, 241);
         border: v.$borderClassic;
         border-radius: 1rem;
-        --tw-shadow: 0 20px 25px -5px #0000001a, 0 8px 10px -6px #0000001a;
-        --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
-        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        box-shadow: v.$boxShadow;
         padding: 2rem;
         transition: all .3s ease-in-out;
         flex-wrap: wrap;
 
         &:hover {
             transform: scale(1.05);
-            background-color: rgb(244, 244, 244);
+            background-color: v.$colorWhite;
 
         }
     }
